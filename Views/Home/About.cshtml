@@ -1,0 +1,23 @@
+﻿
+<div class="jumbotron">
+    <h1>Tom's Sudoku Solver</h1>
+    <p class="lead">Written by Thomas Higgins, a programmer you'd like to hire.</p>
+    <p class="lead">
+        Select a file containing the Sudoku puzzle to be solved, using the"Choose File" selector below. Click "Solve"
+        to then have a solution file generated in the same directory as the source file, assuming a solution exists.
+    </p>
+</div>
+
+<div class="row">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset class="lead col-md-12 " id="SelectPuzzle">
+            <input type="file" name="file" />
+            <br />
+            <input type="submit" value="Solve" />
+        </fieldset>
+    }
+
+    @ViewBag.Message ;
+
+</div>
